@@ -11,9 +11,14 @@
     <% if (messages.success_msg) { %>
       <li><%= messages.success_msg %></li>
     <% } %>
-    <form action="/views/login" method="post">
+
+      <% if (messages.error) { %>
+       <li><%=messages.error%></li>
+      <% } %>
+
+    <form action="/users/login" method="post">
       <div>
-        <input type="email" name="mail" placeholder="Enter Email" id="mail" />
+        <input type="email" name="email" placeholder="Enter Email" id="email" />
       </div>
       <div>
         <input
